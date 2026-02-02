@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
 
+  console.log("Rendering App component");
+
 const showSystemNotification = async (title, body) => {
   if (!("Notification" in window)) return;
   if (Notification.permission !== "granted") return;
