@@ -17,9 +17,6 @@ const showSystemNotification = async (title, body) => {
     icon: "https://cdn-icons-png.flaticon.com/512/733/733585.png",
     badge: "https://cdn-icons-png.flaticon.com/512/733/733585.png",
     vibrate: [200, 100, 200],
-
-
-    
   });
 };
 
