@@ -3,6 +3,7 @@ const http = require("http");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { Server } = require("socket.io");
+require("dotenv").config();
 
 const User = require("./models/User");
 const Message = require("./models/Message");
@@ -25,11 +26,10 @@ app.use(express.json());
 // ================= MONGODB =================
 
 mongoose
-  .connect(
-    "mongodb+srv://vinod_db_user:DqrWvMs0W30nnNHa@cluster0.ljppqwq.mongodb.net/chatapp?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
   .catch((err) => console.log("Mongo Error ❌", err));
+
 
 // ================= SOCKET =================
 
